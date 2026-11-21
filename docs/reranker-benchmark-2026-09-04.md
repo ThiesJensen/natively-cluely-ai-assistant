@@ -33,12 +33,18 @@ top-1 **18/24**, top-3 22/24, mean rank 0.583, **MRR 0.8368**
 | onnx | `ettin-reranker-150m` | 21/24 | 0.9125 | +0.0757 | 0.375 | +4/-1 | 5860 |
 | openrouter | `cohere/rerank-v3.5` | 21/24 | 0.9083 | +0.0715 | 0.583 | +4/-1 | 461 |
 | openrouter | `nvidia/llama-nemotron-rerank-vl-1b-v2:free` | 20/24 | 0.875 | +0.0382 | 0.091 | +4/-0 | 568 (2 null) |
+| onnx | `lupe-multilingual-reranker-small` (2026-11-21, Apple M5)¹ | 19/24 | 0.8705 | +0.0337 | 0.5 | n/a | 2350 |
 | onnx | `ms-marco-minilm-l6` | 19/24 | 0.8688 | +0.0320 | 0.625 | +4/-2 | 211 |
 | gguf | `bge-reranker-v2-m3-q4km` | 19/24 | 0.8618 | +0.0250 | 0.667 | +5/-3 | 1031 |
 | onnx | `bge-reranker-large` | 18/24 | 0.8469 | +0.0101 | 0.625 | +3/-4 | 6007 |
 | onnx | `mxbai-rerank-xsmall` | 18/24 | 0.8394 | +0.0026 | 0.708 | +3/-4 | 662 |
 | onnx | `ettin-reranker-32m` | 18/24 | 0.8299 | -0.0069 | 1.208 | +3/-5 | 753 |
 | **builtin** | `Xenova/bge-reranker-base` (bundled default) | 15/24 | 0.7558 | **-0.0810** | 1.333 | +3/-7 | 1873 |
+
+¹ Measured later on a different machine, without an OpenRouter key, so the pool was
+fed in corpus order. MRR does not depend on that order, because every passage is
+scored; `+/-` does, so it is not given. The bundled model, run the same way, scored
+19/24, MRR 0.8688, mean rank 0.625, matching its row.
 
 Not measured: the four **Jina hosted** models — no `JINA_API_KEY` exists in
 `.env` or in the app's credential store, so they were skipped rather than

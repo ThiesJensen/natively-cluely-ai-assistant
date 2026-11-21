@@ -36,6 +36,7 @@ const MEASURED_MRR = {
   'qwen3-reranker-0.6b-q4km': 0.9201,
   'jina-reranker-v2-multilingual': 0.9167,
   'ettin-reranker-150m': 0.9125,
+  'lupe-multilingual-reranker-small': 0.8705,
   // Keyed by the BUNDLED model's id, not a catalogue id: ms-marco was removed
   // from the download catalogue when it became the bundled default, but its
   // score is still what every recommendation has to beat.

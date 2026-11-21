@@ -334,6 +334,27 @@ export const RERANKER_MODEL_CATALOG: LocalRerankerModel[] = [
     params: '278M · int8',
     note: 'MRR 0.9167 — a true multilingual cross-encoder. Non-commercial licence.',
   },
+  {
+    id: 'lupe-multilingual-reranker-small',
+    name: 'Lupe Multilingual Reranker Small',
+    runtime: 'onnx',
+    repo: 'syntriq/lupe-multilingual-reranker-small',
+    modelId: 'syntriq/lupe-multilingual-reranker-small',
+    dtype: 'fp32',
+    revision: '36c429d7341063891caabd9ae1c7139f37979654',
+    supported: true,
+    files: [
+      { repoPath: 'onnx/model.onnx', bytes: 563071658, sha256: 'f69b5ebdb645611715e392bbda51636c8670f89701a73a3a525f035af055b6f9' },
+      { repoPath: 'tokenizer.json', bytes: 34363441, sha256: '17f7d8b9518c403d7429ad9eeeabb6eed49c8d3311de8ef4ed5ad811381a2ced' },
+      { repoPath: 'tokenizer_config.json', bytes: 46631, sha256: null },
+      { repoPath: 'special_tokens_map.json', bytes: 1051, sha256: null },
+      { repoPath: 'config.json', bytes: 2061, sha256: null },
+    ],
+    bytes: 597484842,
+    license: { spdx: 'Apache-2.0', url: 'https://huggingface.co/syntriq/lupe-multilingual-reranker-small', commercialUseRestricted: false, requiresAcknowledgement: false },
+    params: '141M',
+    note: 'MRR 0.8705 — level with the bundled ms-marco-MiniLM-L-6-v2 (0.8688) on this English set. A multilingual cross-encoder (36 languages, ModernBERT) under Apache-2.0.',
+  },
 
   // ── GGUF, run by llama.cpp in-process (node-llama-cpp) ──────────────────
   {
